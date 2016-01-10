@@ -24,10 +24,12 @@ router.get('/send', function(req, res, next) {
   };
   
   emailTemplate.render(data, function (err, results) {
+    
     if(err) {
       err = new Error('Unable to render email');
       err.status = 500;
-      throw err;
+      next(err);
+      return;
     }
 
     // Send the email
@@ -39,18 +41,14 @@ router.get('/send', function(req, res, next) {
       html: results.html
     };
       
-    try {
-      var transporter = nodemailer.createTransport();
-      transporter.sendMail(mailOptions, function(err, info){
-        if(err) {
-          err.status = 500;
-          throw err;
-        }
-      });
-    }
-    catch(err) {
-        throw err;
-    }
+    var transporter = nodemailer.createTransport();
+    transporter.sendMail(mailOptions, function(err, info){
+      if(err) {
+        err.status = 500;
+        next(err);
+        return;
+      }
+    });
   });
   
   res.render('send');
