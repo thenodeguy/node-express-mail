@@ -26,7 +26,6 @@ router.get('/send', function(req, res, next) {
   emailTemplate.render(data, function (err, results) {
     
     if(err) {
-      err = new Error('Unable to render email');
       err.status = 500;
       next(err);
       return;
