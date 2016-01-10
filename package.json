@@ -1,0 +1,26 @@
+{
+  "name": "node-express-mail",
+  "description": "A basic and lean recipe for implementing emails in a node express server.",
+  "version": "1.0.0",
+  "author": "benjaminvickers",
+  "license": "ISC",
+  "homepage": "https://github.com/benjaminvickers/node-express-mail#readme",
+  "main": "app.js",
+  "scripts": {
+    "start": "NODE_ENV=dev node ./bin/www"
+  },
+  "dependencies": {
+    "ejs": "^2.3.4",
+    "email-templates": "^2.0.1",
+    "express": "~4.13.1",
+    "nodemailer": "^1.11.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benjaminvickers/node-express-mail.git"
+  },
+  "bugs": {
+    "url": "https://github.com/benjaminvickers/node-express-mail/issues"
+  }
+}
