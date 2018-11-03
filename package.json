@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "ejs": "^2.3.4",
-    "email-templates": "^2.0.1",
-    "express": "~4.13.1",
-    "nodemailer": "^1.11.0"
+    "email-templates": "^5.0.2",
+    "express": "~4.16.4",
+    "nodemailer": "^4.6.8"
   },
   "devDependencies": {},
   "repository": {
